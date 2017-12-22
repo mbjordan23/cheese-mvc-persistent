@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+    <title th:text="${title}"></title>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+    <ul th:each="menu : ${allMenus}">
+
+        <li th:text="${menu.name}"><a href="@{'/menu/add' + ${menu.id}}"></a>"</li>
+
+    </ul>
+
+    <a href="/menu/add">Add Menu</a>
+
+</body>
+</html>
